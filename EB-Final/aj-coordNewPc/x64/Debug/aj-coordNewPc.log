@@ -18,14 +18,4 @@ D:\Ciclo 7\Compu Grafica\1EB-FINAL\EB-Final\EB-Final\aj-coordNewPc\Source.cpp(86
 D:\Ciclo 7\Compu Grafica\1EB-FINAL\EB-Final\EB-Final\aj-coordNewPc\Source.cpp(100,13): warning C4244: 'inicializando': conversión de 'double' a 'f32'; posible pérdida de datos
 D:\Ciclo 7\Compu Grafica\1EB-FINAL\EB-Final\EB-Final\aj-coordNewPc\Source.cpp(103,16): warning C4244: 'inicializando': conversión de 'int' a 'f32'; posible pérdida de datos
 D:\Ciclo 7\Compu Grafica\1EB-FINAL\EB-Final\EB-Final\aj-coordNewPc\Source.cpp(116,20): warning C4244: 'inicializando': conversión de 'double' a 'f32'; posible pérdida de datos
-D:\Ciclo 7\Compu Grafica\1EB-FINAL\EB-Final\EB-Final\aj-coordNewPc\Source.cpp(149,17): error C2065: 'lightPos2': identificador no declarado
-D:\Ciclo 7\Compu Grafica\1EB-FINAL\EB-Final\EB-Final\aj-coordNewPc\Source.cpp(149,31): error C2065: 'positions': identificador no declarado
-D:\Ciclo 7\Compu Grafica\1EB-FINAL\EB-Final\EB-Final\aj-coordNewPc\Source.cpp(149,56): error C2065: 'lightPos2': identificador no declarado
-D:\Ciclo 7\Compu Grafica\1EB-FINAL\EB-Final\EB-Final\aj-coordNewPc\Source.cpp(149,70): error C2065: 'positions': identificador no declarado
-D:\Ciclo 7\Compu Grafica\1EB-FINAL\EB-Final\EB-Final\aj-coordNewPc\Source.cpp(149,95): error C2065: 'lightPos2': identificador no declarado
-D:\Ciclo 7\Compu Grafica\1EB-FINAL\EB-Final\EB-Final\aj-coordNewPc\Source.cpp(149,109): error C2065: 'positions': identificador no declarado
-D:\Ciclo 7\Compu Grafica\1EB-FINAL\EB-Final\EB-Final\aj-coordNewPc\Source.cpp(149,132): error C2065: 'cubeScale': identificador no declarado
-D:\Ciclo 7\Compu Grafica\1EB-FINAL\EB-Final\EB-Final\aj-coordNewPc\Source.cpp(150,5): error C2065: 'positions': identificador no declarado
-D:\Ciclo 7\Compu Grafica\1EB-FINAL\EB-Final\EB-Final\aj-coordNewPc\Source.cpp(151,5): error C2065: 'positions': identificador no declarado
-D:\Ciclo 7\Compu Grafica\1EB-FINAL\EB-Final\EB-Final\aj-coordNewPc\Source.cpp(152,5): error C2065: 'positions': identificador no declarado
-D:\Ciclo 7\Compu Grafica\1EB-FINAL\EB-Final\EB-Final\aj-coordNewPc\Source.cpp(153,5): error C2065: 'cubeScale': identificador no declarado
+  aj-coordNewPc.vcxproj -> D:\Ciclo 7\Compu Grafica\1EB-FINAL\EB-Final\EB-Final\x64\Debug\EB-FinalMoscol.exe
