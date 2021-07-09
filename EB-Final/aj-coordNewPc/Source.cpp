@@ -18,22 +18,22 @@ void processInput(GLFWwindow* window) {
 		glfwSetWindowShouldClose(window, true);
 	}
 	if (glfwGetKey(window, GLFW_KEY_T) == GLFW_PRESS) {
-		PosAvion.y += 0.1f;
+		PosAvion.y += 0.08f;
 	}
 	if (glfwGetKey(window, GLFW_KEY_U) == GLFW_PRESS) {
-		PosAvion.y -= 0.1f;
+		PosAvion.y -= 0.08f;
 	}
 	if (glfwGetKey(window, GLFW_KEY_Y) == GLFW_PRESS) {
-		PosAvion.z += 0.1f;
+		PosAvion.z += 0.08f;
 	}
 	if (glfwGetKey(window, GLFW_KEY_G) == GLFW_PRESS) {
-		PosAvion.x += 0.1f;
+		PosAvion.x += 0.08f;
 	}
 	if (glfwGetKey(window, GLFW_KEY_H) == GLFW_PRESS) {
-		PosAvion.z -= 0.1f;
+		PosAvion.z -= 0.08f;
 	}
 	if (glfwGetKey(window, GLFW_KEY_J) == GLFW_PRESS) {
-		PosAvion.x -= 0.1f;
+		PosAvion.x -= 0.08f;
 	}
 	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
 		cam->processKeyboard(FORWARD, deltaTime);
@@ -81,10 +81,10 @@ i32 main() {
 	Model* airplane = new Model(files, "airplane2/piper_pa18.obj");
 	Model* asteroid = new Model(files, "rock/rock.obj");
 
-	u32 amount = 1000;
+	u32 amount = 300;
 	glm::mat4* models = new glm::mat4[amount];
 	srand(glfwGetTime());
-	f32 radius = 15.0f;
+	f32 radius = 3.5f;
 	f32 offset = 2.5f;
 	for (u32 i = 0; i < amount; ++i) {
 		glm::mat4 model = glm::mat4(1.0f);
@@ -134,22 +134,11 @@ i32 main() {
 
 		glm::mat4 model = glm::mat4(1.0f);
 		model = translate(model, PosAvion);
-		//model = translate(model, glm::vec3(20.0f + sin(currentFrame) * 2, 20.0f, 30.0f));
-		//model = glm::rotate(model, currentFrame / 6, glm::vec3(0.0f, (sin(30) * 2), 0.0f));
-		model = glm::scale(model, glm::vec3(0.1f));
+		model = glm::scale(model, glm::vec3(0.08f));
 		objShader->setMat4("model", model);
 		airplane->Draw(objShader);
 
-		/*glm::mat4 model1 = glm::mat4(1.0f);
-		for (u32 i = 0; i < 10; ++i) {
-			model1 = glm::mat4(1.0f);
-			model1 = translate(model1, glm::vec3(rand() % 21 - 5, 0.0f, 0.0f));
-			//model = glm::rotate(model, currentFrame / 6, glm::vec3(5.0f, (sin(30) * 2), 0.0f));
-			model1 = glm::scale(model1, glm::vec3(0.15f));
-			objShader->setMat4("model", model1);
-			asteroid->Draw(objShader);
-		}
-		*/
+	
 		rockShader->use();
 		rockShader->setVec3("xyz", lightPos);
 		rockShader->setVec3("xyzColor", lightColor);
@@ -157,7 +146,8 @@ i32 main() {
 		rockShader->setMat4("proj", proj);
 		rockShader->setMat4("view", cam->getViewM4());
 		for (u32 i = 0; i < amount; ++i) {
-			
+			models[i] = translate(models[i], glm::vec3(0.07f, 0.0f, 0.09f));
+			models[i] = glm::rotate(models[i], 0.05f, glm::vec3(0.0f, (2.0f + (sin(currentFrame)/2) * 2), 0.0f));
 			rockShader->setMat4("model", models[i]);
 			asteroid->Draw(rockShader);
 		}
