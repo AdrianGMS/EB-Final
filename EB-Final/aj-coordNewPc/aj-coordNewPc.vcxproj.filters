@@ -55,5 +55,11 @@
     <None Include="bin\shader.vert">
       <Filter>Archivos de origen</Filter>
     </None>
+    <None Include="bin\shader2.frag">
+      <Filter>Archivos de origen</Filter>
+    </None>
+    <None Include="bin\shader2.vert">
+      <Filter>Archivos de origen</Filter>
+    </None>
   </ItemGroup>
 </Project>
