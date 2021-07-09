@@ -14,5 +14,5 @@ C:\glfw-3.3.4\include\cam.hpp(70,1): warning C4305: '=': truncamiento de 'double
 C:\glfw-3.3.4\include\cam.hpp(73,1): warning C4305: '=': truncamiento de 'double' a 'f32'
 C:\glfw-3.3.4\include\cam.hpp(87,1): warning C4305: '=': truncamiento de 'double' a 'f32'
 C:\glfw-3.3.4\include\cam.hpp(90,1): warning C4305: '=': truncamiento de 'double' a 'f32'
-D:\Ciclo 7\Compu Grafica\1EB-FINAL\EB-Final\EB-Final\aj-coordNewPc\Source.cpp(70,20): warning C4244: 'inicializando': conversión de 'double' a 'f32'; posible pérdida de datos
+D:\Ciclo 7\Compu Grafica\1EB-FINAL\EB-Final\EB-Final\aj-coordNewPc\Source.cpp(83,20): warning C4244: 'inicializando': conversión de 'double' a 'f32'; posible pérdida de datos
   aj-coordNewPc.vcxproj -> D:\Ciclo 7\Compu Grafica\1EB-FINAL\EB-Final\EB-Final\x64\Debug\EB-FinalMoscol.exe

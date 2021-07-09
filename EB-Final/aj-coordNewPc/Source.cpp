@@ -11,10 +11,23 @@ Cam* cam;
 f32  deltaTime = 0.0f;
 f32  lastFrame = 0.0f;
 bool wireframe = false;
+glm::vec3 PosAvion(0.0f, 0.0f, -2.0f);
 
 void processInput(GLFWwindow* window) {
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
 		glfwSetWindowShouldClose(window, true);
+	}
+	if (glfwGetKey(window, GLFW_KEY_Y) == GLFW_PRESS) {
+		PosAvion.z += 0.1f;
+	}
+	if (glfwGetKey(window, GLFW_KEY_G) == GLFW_PRESS) {
+		PosAvion.x += 0.1f;
+	}
+	if (glfwGetKey(window, GLFW_KEY_H) == GLFW_PRESS) {
+		PosAvion.z -= 0.1f;
+	}
+	if (glfwGetKey(window, GLFW_KEY_J) == GLFW_PRESS) {
+		PosAvion.x -= 0.1f;
 	}
 	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
 		cam->processKeyboard(FORWARD, deltaTime);
@@ -53,7 +66,7 @@ i32 main() {
 	cam = new Cam();
 	//PATH de texturas y objetos
 	Files* files = new Files("bin", "resources/textures", "resources/objects");
-
+	
 	//Ruta de shaders
 	Shader* objShader = new Shader(files, "shader.vert", "shader.frag");
 
@@ -70,9 +83,8 @@ i32 main() {
 		f32 currentFrame = glfwGetTime();
 		deltaTime = currentFrame - lastFrame;
 		lastFrame = currentFrame;
-
 		processInput(window);
-		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+		glClearColor(0.1f, 0.0f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		glPolygonMode(GL_FRONT_AND_BACK, wireframe ? GL_LINE : GL_FILL);
@@ -88,18 +100,19 @@ i32 main() {
 		objShader->setMat4("view", cam->getViewM4());
 
 		glm::mat4 model = glm::mat4(1.0f);
-		model = translate(model, glm::vec3(0.0f, 0.0f, -2.0f));
+		model = translate(model, PosAvion);
 		//model = translate(model, glm::vec3(20.0f + sin(currentFrame) * 2, 20.0f, 30.0f));
 		//model = glm::rotate(model, currentFrame / 6, glm::vec3(0.0f, (sin(30) * 2), 0.0f));
 		model = glm::scale(model, glm::vec3(0.1f));
 		objShader->setMat4("model", model);
 		airplane->Draw(objShader);
 
+		glm::mat4 model1 = glm::mat4(1.0f);
 		for (u32 i = 0; i < 5; ++i) {
-			model = translate(model, glm::vec3(5.0f+(i), 0.0f, 2.0f+2.0f));
+			model1 = translate(model1, glm::vec3(1.0f+(i), 0.0f, -2.0f+2.0f)); 
 			//model = glm::rotate(model, currentFrame / 6, glm::vec3(5.0f, (sin(30) * 2), 0.0f));
-			model = glm::scale(model, glm::vec3(0.9f));
-			objShader->setMat4("model", model);
+			model1 = glm::scale(model1, glm::vec3(0.3f));
+			objShader->setMat4("model", model1);
 			asteroid->Draw(objShader);
 		}
 
