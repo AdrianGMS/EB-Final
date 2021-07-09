@@ -91,15 +91,17 @@ i32 main() {
 		model = translate(model, glm::vec3(0.0f, 0.0f, -2.0f));
 		//model = translate(model, glm::vec3(20.0f + sin(currentFrame) * 2, 20.0f, 30.0f));
 		//model = glm::rotate(model, currentFrame / 6, glm::vec3(0.0f, (sin(30) * 2), 0.0f));
-		model = glm::scale(model, glm::vec3(2.0f));
+		model = glm::scale(model, glm::vec3(0.1f));
 		objShader->setMat4("model", model);
 		airplane->Draw(objShader);
 
-		model = translate(model, glm::vec3(10.0f, 0.0f, -2.0f));
-		//model = glm::rotate(model, currentFrame / 6, glm::vec3(5.0f, (sin(30) * 2), 0.0f));
-		model = glm::scale(model, glm::vec3(2.0f));
-		objShader->setMat4("model", model);
-		asteroid->Draw(objShader);
+		for (u32 i = 0; i < 5; ++i) {
+			model = translate(model, glm::vec3(5.0f+(i), 0.0f, 2.0f+2.0f));
+			//model = glm::rotate(model, currentFrame / 6, glm::vec3(5.0f, (sin(30) * 2), 0.0f));
+			model = glm::scale(model, glm::vec3(0.9f));
+			objShader->setMat4("model", model);
+			asteroid->Draw(objShader);
+		}
 
 		
 
